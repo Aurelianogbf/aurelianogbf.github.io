@@ -139,81 +139,8 @@ function configurarRevelar() {
   document.querySelectorAll(".revelar").forEach((el) => observador.observe(el));
 }
 
-// ===== Terminal interativo (o diferencial do projeto) =====
-function configurarTerminal() {
-  const corpo = $("#term-corpo");
-  const entrada = $("#term-input");
-  const historico = [];
-  let posHist = 0;
-
-  const escrever = (texto, classe = "") => {
-    const linha = document.createElement("div");
-    if (classe) linha.className = classe;
-    linha.textContent = texto;
-    corpo.appendChild(linha);
-    corpo.scrollTop = corpo.scrollHeight;
-  };
-
-  const comandos = {
-    help: () =>
-      "Comandos disponíveis:\n" +
-      "  whoami         quem sou eu\n" +
-      "  git log        minha trajetória\n" +
-      "  git branch     minhas habilidades\n" +
-      "  git remote -v  onde me encontrar\n" +
-      "  ls             meus projetos\n" +
-      "  git status     o que estou fazendo agora\n" +
-      "  tema           alterna tema claro/escuro\n" +
-      "  clear          limpa a tela",
-    whoami: () => `${DADOS.nome}\n${DADOS.cargos.join(" · ")}`,
-    "git log": () =>
-      DADOS.trajetoria.map((t) => `commit ${hashDe(t.titulo)} (${t.tag})\n    ${t.data} — ${t.titulo}`).join("\n\n"),
-    "git log --oneline": () => DADOS.trajetoria.map((t) => `${hashDe(t.titulo)} ${t.titulo}`).join("\n"),
-    "git branch": () => DADOS.habilidades.map((h, i) => `${i === 0 ? "*" : " "} ${h.nome.padEnd(20)} ${h.nivel}%`).join("\n"),
-    "git remote -v": () => DADOS.redes.map((r) => `${r.nome.toLowerCase().padEnd(10)} ${r.url}`).join("\n"),
-    ls: () => DADOS.projetos.map((p) => `${p.nome}/`).join("   "),
-    "git status": () =>
-      "On branch main\nYour branch is up to date with 'origin/main'.\n\n" +
-      "Em andamento:\n  modified:   capacitacao-asimov-jr (Ciência de Dados)\n  new file:   aprendendo-git-flow.md",
-    tema: () => { $("#btn-tema").click(); return "Tema alterado."; },
-    "git push": () => "Everything up-to-date ✔  (o currículo já está publicado!)",
-    sudo: () => "Permissão negada: nem com sudo você me contrata sem conversar antes 😄",
-  };
-
-  escrever(`Bem-vindo ao terminal do ${DADOS.apelido}! Digite "help" para começar.`, "info-t");
-
-  $("#term-form").addEventListener("submit", (ev) => {
-    ev.preventDefault();
-    const cmd = entrada.value.trim();
-    entrada.value = "";
-    if (!cmd) return;
-    historico.push(cmd);
-    posHist = historico.length;
-    escrever(`$ ${cmd}`, "cmd");
-
-    const chave = cmd.toLowerCase().replace(/\s+/g, " ");
-    if (chave === "clear") { corpo.innerHTML = ""; return; }
-    const acao = comandos[chave] || (chave.startsWith("sudo") && comandos.sudo);
-    if (acao) escrever(acao());
-    else escrever(`git: '${cmd}' não é um comando conhecido. Digite "help".`, "erro");
-  });
-
-  // Setas para cima/baixo navegam pelo histórico, como num terminal de verdade
-  entrada.addEventListener("keydown", (ev) => {
-    if (ev.key === "ArrowUp" && posHist > 0) entrada.value = historico[--posHist];
-    else if (ev.key === "ArrowDown") {
-      posHist = Math.min(posHist + 1, historico.length);
-      entrada.value = historico[posHist] || "";
-    } else return;
-    ev.preventDefault();
-  });
-
-  $("#term").addEventListener("click", () => entrada.focus());
-}
-
 montarPagina();
 digitarCargos();
 configurarTema();
 configurarMenu();
 configurarRevelar();
-configurarTerminal();
