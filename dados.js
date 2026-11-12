@@ -67,7 +67,7 @@ const DADOS = {
   // Cada habilidade vira uma "branch". nivel vai de 0 a 100.
   habilidades: [
     { nome: "Git & GitHub", nivel: 80 },
-    { nome: "HTML & CSS", nivel: 70 },
+    { nome: "HTML & CSS", nivel: 30 },
     { nome: "JavaScript", nivel: 50 },
     { nome: "Python", nivel: 55 },
     { nome: "Análise de Dados", nivel: 40 },
