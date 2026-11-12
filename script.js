@@ -26,11 +26,20 @@ function montarPagina() {
     ? `<img src="${DADOS.foto}" alt="Foto de ${DADOS.apelido}">`
     : iniciais(DADOS.nome);
 
-  const linksRedes = DADOS.redes
+  $("#redes").innerHTML = DADOS.redes
+    .filter((r) => r.noTopo !== false)
     .map((r) => `<a href="${r.url}" target="_blank" rel="noopener">${r.nome}</a>`)
     .join("");
-  $("#redes").innerHTML = linksRedes;
-  $("#contatos").innerHTML = linksRedes;
+
+  $("#contatos").innerHTML = DADOS.redes
+    .map(
+      (r) => `
+      <a class="contato-item" href="${r.url}" target="_blank" rel="noopener">
+        <span class="contato-rotulo">${r.nome}</span>
+        <span class="contato-valor">${r.texto}</span>
+      </a>`
+    )
+    .join("");
 
   $("#info").innerHTML = DADOS.info
     .map((i) => `<div><dt>${i.rotulo}</dt><dd>${i.valor}</dd></div>`)
