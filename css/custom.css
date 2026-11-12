@@ -1,4 +1,4 @@
-/* custom.css — ajustes próprios por cima do template (main-green.css) */
+/* custom.css — ajustes próprios por cima do template (main.css) */
 
 /* Porcentagem ao lado do nome da habilidade */
 .skills-info h4 small { float: right; color: #888; font-weight: 400; }
@@ -17,18 +17,71 @@ a.service-block.projeto:hover { transform: translateY(-4px); box-shadow: 0 10px 
   box-shadow: 0 2px 10px rgba(0, 0, 0, .08); color: #333; transition: transform .2s, box-shadow .2s;
 }
 .contato-item:hover, .contato-item:focus { color: #333; text-decoration: none; transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0, 0, 0, .12); }
-.contato-item .fa { font-size: 34px; color: #4caf50; margin-bottom: 8px; }
+.contato-item .fa { font-size: 34px; color: #3867d6; margin-bottom: 8px; }
 .contato-item .rotulo { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #888; }
 .contato-item .valor { font-weight: 600; word-break: break-word; }
 
 /* Etiquetas de ferramentas */
 .tags-ferramentas { display: flex; flex-wrap: wrap; gap: 8px; }
-.tags-ferramentas span { background: #e8f5e9; color: #2e7d32; border-radius: 15px; padding: 4px 14px; font-size: 13px; font-weight: 500; }
+.tags-ferramentas span { background: #e6edfb; color: #2a4fa8; border-radius: 15px; padding: 4px 14px; font-size: 13px; font-weight: 500; }
 
 /* Listas simples (outras habilidades, soft skills) */
 .lista-simples { padding-left: 18px; margin: 0; }
 .lista-simples li { margin-bottom: 8px; line-height: 1.5; }
-.lista-simples b { color: #2e7d32; }
+.lista-simples b { color: #2a4fa8; }
 
 /* Data ao lado do nome do projeto */
-.service-block h4 small { display: block; margin-top: 4px; color: #4caf50; font-weight: 500; }
+.service-block h4 small { display: block; margin-top: 4px; color: #3867d6; font-weight: 500; }
+
+/* ===== Identidade própria (v2.3.0): paleta azul + pequenos ajustes de layout ===== */
+
+/* Cabeçalho da página inicial com degradê azul → roxo */
+.start-page-content .page-header {
+  background-color: #3867d6;
+  background-image: linear-gradient(135deg, #3867d6 0%, #6c5ce7 100%);
+  border-radius: 10px 10px 0 0;
+}
+
+/* Foto redonda em vez de quadrada */
+.start-page-content .page-header .photo {
+  border-radius: 50%;
+  border-width: 5px;
+  overflow: hidden;
+}
+.start-page-content .page-header .photo img {
+  border-radius: 50%;
+  display: block;
+  width: 100%;
+}
+
+/* Cantos arredondados nas abas */
+.pt-page-content, .pt-page { border-radius: 10px; }
+.btn-primary, .button { border-radius: 25px; }
+
+/* Títulos de seção com barrinha embaixo, no lugar do estilo do template */
+.block-title h3 { position: relative; padding-bottom: 10px; }
+.block-title h3:after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 40px; height: 3px; border-radius: 3px;
+  background: linear-gradient(90deg, #3867d6, #6c5ce7);
+}
+.start-page-content .about-me .block-title h3:after { left: 0; }
+
+/* Barras de habilidade em degradê */
+.skill-percentage { background: linear-gradient(90deg, #3867d6, #6c5ce7) !important; }
+
+/* Cards de projeto com borda superior colorida */
+.service-block.projeto { border-top: 3px solid #3867d6; border-radius: 8px; }
+.contato-item { border-radius: 10px; border-bottom: 3px solid #6c5ce7; }
+.custom-page-content .page-header.color-1 {
+  background-image: linear-gradient(135deg, #3867d6 0%, #6c5ce7 100%);
+  border-radius: 10px 10px 0 0;
+}
+
+/* Botão de download em pílula com degradê */
+.download-resume .btn {
+  border: 0; border-radius: 25px; color: #fff;
+  background-image: linear-gradient(135deg, #3867d6 0%, #6c5ce7 100%);
+  box-shadow: 0 6px 16px rgba(56, 103, 214, .3);
+}
+.download-resume .btn:hover, .download-resume .btn:focus { color: #fff; opacity: .92; }
