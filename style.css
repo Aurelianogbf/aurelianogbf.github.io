@@ -143,22 +143,6 @@ nav a:hover, nav a.ativo { color: var(--verde); text-decoration: none; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tags span { font-size: .75rem; color: var(--azul); background: color-mix(in srgb, var(--azul) 12%, transparent); padding: 2px 10px; border-radius: 999px; }
 
-/* Terminal */
-.dica { color: var(--texto-2); margin-bottom: 16px; }
-.term { background: #010409; border: 1px solid var(--borda); border-radius: 12px; overflow: hidden; box-shadow: var(--sombra); color: #e6edf3; }
-.term-barra { display: flex; align-items: center; gap: 7px; padding: 10px 14px; background: #161b22; border-bottom: 1px solid #30363d; }
-.term-barra span { width: 12px; height: 12px; border-radius: 50%; background: #ff5f56; }
-.term-barra span:nth-child(2) { background: #ffbd2e; }
-.term-barra span:nth-child(3) { background: #27c93f; }
-.term-barra p { margin-left: 10px; font: .8rem "JetBrains Mono", monospace; color: #8b949e; }
-.term-corpo { padding: 14px 18px 0; height: 280px; overflow-y: auto; font: .88rem/1.6 "JetBrains Mono", monospace; white-space: pre-wrap; word-break: break-word; }
-.term-corpo .cmd { color: #3fb950; }
-.term-corpo .erro { color: #ff7b72; }
-.term-corpo .info-t { color: #58a6ff; }
-.term-linha { display: flex; gap: 10px; padding: 10px 18px 16px; }
-.prompt-term { color: #3fb950; }
-#term-input { flex: 1; background: transparent; border: none; outline: none; color: #e6edf3; font-size: .9rem; }
-
 /* Contato e rodapé */
 .contato p { color: var(--texto-2); }
 .rodape { text-align: center; color: var(--texto-2); font-size: .8rem; padding: 60px 16px 30px; }
