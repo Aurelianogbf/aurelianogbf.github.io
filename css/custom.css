@@ -20,3 +20,15 @@ a.service-block.projeto:hover { transform: translateY(-4px); box-shadow: 0 10px 
 .contato-item .fa { font-size: 34px; color: #4caf50; margin-bottom: 8px; }
 .contato-item .rotulo { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #888; }
 .contato-item .valor { font-weight: 600; word-break: break-word; }
+
+/* Etiquetas de ferramentas */
+.tags-ferramentas { display: flex; flex-wrap: wrap; gap: 8px; }
+.tags-ferramentas span { background: #e8f5e9; color: #2e7d32; border-radius: 15px; padding: 4px 14px; font-size: 13px; font-weight: 500; }
+
+/* Listas simples (outras habilidades, soft skills) */
+.lista-simples { padding-left: 18px; margin: 0; }
+.lista-simples li { margin-bottom: 8px; line-height: 1.5; }
+.lista-simples b { color: #2e7d32; }
+
+/* Data ao lado do nome do projeto */
+.service-block h4 small { display: block; margin-top: 4px; color: #4caf50; font-weight: 500; }
