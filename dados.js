@@ -29,10 +29,13 @@ const DADOS = {
     { rotulo: "Telefone", valor: "+55 (35) 98861-4671" },
   ],
 
+  // "texto" é o que aparece escrito na seção de contato.
+  // Itens com noTopo: false aparecem só na seção de contato, não no início da página.
   redes: [
-    { nome: "GitHub", url: "https://github.com/aurelianogbf" },
-    { nome: "LinkedIn", url: "https://www.linkedin.com/in/aurelianogbfilho/" },
-    { nome: "E-mail", url: "mailto:aurelianogbfilho@gmail.com" },
+    { nome: "GitHub", texto: "aurelianogbf", url: "https://github.com/aurelianogbf" },
+    { nome: "LinkedIn", texto: "aurelianogbfilho", url: "https://www.linkedin.com/in/aurelianogbfilho/" },
+    { nome: "E-mail", texto: "aurelianogbfilho@gmail.com", url: "mailto:aurelianogbfilho@gmail.com" },
+    { nome: "Telefone / WhatsApp", texto: "+55 (35) 98861-4671", url: "https://wa.me/5535988614671", noTopo: false },
   ],
 
   // Linha do tempo exibida como um "git log". Do mais recente para o mais antigo.

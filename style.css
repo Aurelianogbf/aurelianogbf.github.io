@@ -88,7 +88,15 @@ nav a:hover, nav a.ativo { color: var(--verde); text-decoration: none; }
   padding: 6px 14px; border-radius: 999px; transition: border-color .2s, transform .2s;
 }
 .redes a:hover { border-color: var(--verde); transform: translateY(-2px); text-decoration: none; }
-.redes.grandes a { padding: 10px 20px; font-size: .95rem; }
+.contatos { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin-top: 22px; }
+.contato-item {
+  display: flex; flex-direction: column; gap: 4px;
+  background: var(--fundo-2); border: 1px solid var(--borda); border-radius: 12px; padding: 16px 18px;
+  color: var(--texto); transition: border-color .2s, transform .2s;
+}
+.contato-item:hover { border-color: var(--verde); transform: translateY(-3px); text-decoration: none; }
+.contato-rotulo { font-size: .8rem; color: var(--verde); font-family: "JetBrains Mono", monospace; }
+.contato-valor { font-weight: 600; word-break: break-word; }
 
 /* ===== Seções ===== */
 .secao { max-width: 1000px; margin: 0 auto; padding: 80px clamp(16px, 5vw, 32px) 20px; }
